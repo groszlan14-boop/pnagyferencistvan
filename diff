@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<title>P. Nagy Ferenc István</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+body {
+margin: 0;
+font-family: Georgia, serif;
+color: #1f2f1f;
+background: linear-gradient(rgba(240,248,240,0.85), rgba(240,248,240,0.85)),
+url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e');
+background-size: cover;
+background-attachment: fixed;
+}
+header { text-align: center; padding: 3rem 1rem; }
+nav { display: flex; justify-content: center; gap: 1rem; background: rgba(255,255,255,0.6); padding: 1rem; }
+nav button { background: #4b6f4b; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 18px; cursor: pointer; }
+section { max-width: 900px; margin: 2rem auto; padding: 2rem; background: rgba(255,255,255,0.8); border-radius: 16px; display: none; }
+section.active { display: block; }
+audio, video { width: 100%; margin-top: 0.5rem; }
+footer { text-align: center; padding: 2rem; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<header>
+<h1>P. Nagy Ferenc István</h1>
+<p>Versek – MP3 – MP4</p>
+</header>
+<nav>
+<button onclick="show('poems')">Versek</button>
+<button onclick="show('mp3')">MP3</button>
+<button onclick="show('mp4')">MP4</button>
+</nav>
+<section id="poems" class="active">
+<h2>Versek</h2>
+<p>Vers címe 1</p>
+<p>Vers címe 2</p>
+</section>
+<section id="mp3">
+<h2>MP3 dalok</h2>
+<audio controls></audio>
+</section>
+<section id="mp4">
+<h2>MP4 videók</h2>
+<video controls></video>
+</section>
+<footer>
+Nincs kapcsolat • Nincs rendelés • Nincs fizetés
+</footer>
+<script>
+function show(id) {
+document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
+</body>
+</html>
