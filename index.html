@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>P. Nagy Ferenc István</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -25,6 +25,7 @@
   </style>
 </head>
 <body>
+
 <header>
   <h1>P. Nagy Ferenc István</h1>
   <p>Versek – MP3 – MP4</p>
@@ -42,7 +43,7 @@
   <p>Vers 1</p>
   <p>Vers 2</p>
   <!-- CSAK TE LÁTOD A CREATE GOMBOT -->
-  <button class="create-btn" onclick="alert('Ide tudsz új verset feltölteni saját magadnak')">Create / Új vers</button>
+  <button class="create-btn" onclick="uploadFile('vers')">Create / Új vers</button>
 </section>
 
 <section id="mp3">
@@ -50,7 +51,7 @@
   <audio controls src="mp3/dal1.mp3"></audio>
   <audio controls src="mp3/dal2.mp3"></audio>
   <!-- CSAK TE LÁTOD A CREATE GOMBOT -->
-  <button class="create-btn" onclick="alert('Ide tudsz új MP3-at feltölteni')">Create / Új MP3</button>
+  <button class="create-btn" onclick="uploadFile('mp3')">Create / Új MP3</button>
 </section>
 
 <section id="mp4">
@@ -58,7 +59,7 @@
   <video controls src="mp4/video1.mp4"></video>
   <video controls src="mp4/video2.mp4"></video>
   <!-- CSAK TE LÁTOD A CREATE GOMBOT -->
-  <button class="create-btn" onclick="alert('Ide tudsz új MP4-et feltölteni')">Create / Új MP4</button>
+  <button class="create-btn" onclick="uploadFile('mp4')">Create / Új MP4</button>
 </section>
 </main>
 
@@ -72,12 +73,18 @@
     document.getElementById(id).classList.add('active');
   }
 
-  // Itt tudod beállítani, hogy a CREATE gomb csak neked látszódjon
-  // Pl. ellenőrizhetsz valami titkos jelszót vagy hash-t
+  // CSAK TE LÁTOD a CREATE gombokat
   const isOwner = true; // Csak Te állítsd true-ra
   if (!isOwner) {
     document.querySelectorAll('.create-btn').forEach(btn => btn.style.display = 'none');
   }
+
+  // Egyszerű alert funkció a Create gombhoz
+  function uploadFile(type) {
+    alert(`Ide tudsz új ${type}-ot feltölteni a saját fiókodból.`);
+    // Később ide lehet beilleszteni a tényleges fájl feltöltést
+  }
 </script>
+
 </body>
 </html>
